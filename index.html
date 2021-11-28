@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+</head>
+<body>
+    <script>
+       
+        function toDOList(){
+           
+          var taskList = ["Home","about","contactus"];
+ 
+           function addTasks(task){
+             taskList.push(task);
+             }
+ 
+                function showTasks(){
+              console.log("============================",'\n');
+              for (let i = 0; i < taskList.length; i++) {
+                console.log(i+1+")"+" "+taskList[i],"\n");
+ 
+              }
+            }
+ 
+            function deleteTasks(taskNum){
+              taskList.splice(taskNum-1,1);
+              showTasks();
+            }
+ 
+            function editTasks(taskNum,newValue){
+              taskList.splice(taskNum-1,1,newValue);
+              showTasks();
+            }
+ 
+            function completeTasks(taskName){
+              let taskIndex = taskList.indexOf(taskName);
+              let markedValue = taskName+' ✔'
+              taskList.splice(taskIndex,1,markedValue);
+              showTasks();
+            }
+ 
+            addTasks("practice");
+            showTasks();
+            deleteTasks(3);
+            editTasks(3,"fix");
+            completeTasks("practice")
+       }
+       toDO();
+           
+   </script>
+   <h1>Todo list </h1>
+   <h3>open console</h3>
+</body>
+</html>
